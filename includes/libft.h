@@ -6,7 +6,7 @@
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:57:03 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/04/30 15:21:31 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/05/05 19:59:56 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# define BUFF_SIZE 1024
+# define CHECK(x) if (!(x)) return (-1)
+# define SFJN(t, cnt, bu) t = cnt; CHECK(cnt = ft_strjoin(cnt, bu)); free(t)
 
 typedef struct		s_list
 {
@@ -23,6 +26,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					get_next_line(const int fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);

@@ -1,8 +1,7 @@
 NAME = libft.a
 
-HEADER = .
-
-SRC = ft_memset.c \
+SRC = get_next_line.c \
+	  ft_memset.c \
 	  ft_putendl.c \
 	  ft_lstdelone.c \
 	  ft_lstnew.c \
@@ -68,7 +67,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -g -I $(HEADER) -c $(SRC)
+	gcc -Wall -Wextra -Werror -g -I includes/ -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 
 clean:
