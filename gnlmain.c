@@ -10,7 +10,7 @@ int	main(int ac, char **av)
 	
 	if (ac < 2)
 	{
-		printf("usage: add file to read");
+		printf("usage: add file to read\n");
 		return (0);
 	}
 	if ((fd = open(av[1], O_RDONLY)) == -1)
