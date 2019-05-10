@@ -6,7 +6,7 @@
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 10:48:14 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/05/05 20:00:10 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/05/10 17:12:17 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int		delme(t_list **left, t_list **tmp, char ***line)
 {
 	t_list *tmp1;
 
-	**line = ft_strdup((*tmp)->content);
+	CHECK(**line = ft_strdup((*tmp)->content));
 	free((*tmp)->content);
 	(*tmp)->content = NULL;
 	tmp1 = *left;
