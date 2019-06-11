@@ -6,13 +6,13 @@
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 10:48:14 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/05/10 17:12:17 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/05/14 15:00:56 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*glist(t_list **left, int fd)
+static t_list	*glist(t_list **left, int fd)
 {
 	t_list	*tmp;
 
@@ -34,7 +34,7 @@ t_list	*glist(t_list **left, int fd)
 	return (tmp);
 }
 
-int		fun(t_list **tmp, char ***line)
+static int		fun(t_list **tmp, char ***line)
 {
 	size_t	i;
 	char	*t1;
@@ -60,7 +60,7 @@ int		fun(t_list **tmp, char ***line)
 	return (1);
 }
 
-int		cic(char **bu, size_t a, t_list **tmp, char **line)
+static int		cic(char **bu, size_t a, t_list **tmp, char **line)
 {
 	char *tc;
 
@@ -81,11 +81,11 @@ int		cic(char **bu, size_t a, t_list **tmp, char **line)
 	return (0);
 }
 
-int		delme(t_list **left, t_list **tmp, char ***line)
+static int		delme(t_list **left, t_list **tmp, char ***line)
 {
 	t_list *tmp1;
 
-	CHECK(**line = ft_strdup((*tmp)->content));
+	**line = ft_strdup((*tmp)->content);
 	free((*tmp)->content);
 	(*tmp)->content = NULL;
 	tmp1 = *left;
@@ -103,7 +103,7 @@ int		delme(t_list **left, t_list **tmp, char ***line)
 	return (1);
 }
 
-int		get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static t_list	*left;
 	t_list			*tmp;
