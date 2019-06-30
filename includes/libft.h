@@ -6,7 +6,7 @@
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:57:03 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/05/05 19:59:56 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/05/14 15:32:04 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # define BUFF_SIZE 1000
+# include <fcntl.h>
 # define CHECK(x) if (!(x)) return (-1)
+# define CHECKN(x) if (!(x)) return (NULL)
+# define ERR(x) if (x == -1) return (-1)
 # define SFJN(t, cnt, bu) t = cnt; CHECK(cnt = ft_strjoin(cnt, bu)); free(t)
 
 typedef struct		s_list
@@ -85,6 +88,7 @@ t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstaddend(t_list **alst, t_list *new);
 void				ft_lstaddend(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
