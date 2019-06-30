@@ -15,7 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# define BUFF_SIZE 1000
+# define BUFF_SIZE 50000
 # include <fcntl.h>
 # define CHECK(x) if (!(x)) return (-1)
 # define CHECKN(x) if (!(x)) return (NULL)
