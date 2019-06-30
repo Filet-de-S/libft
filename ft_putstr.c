@@ -18,6 +18,8 @@ void	ft_putstr(char const *s)
 
 	i = 0;
 	if (s)
-		while (s[i])
-			ft_putchar(s[i++]);
+	{
+		i = ft_strlen(s);
+		write(1, s, i);
+	}
 }

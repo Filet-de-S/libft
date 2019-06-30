@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	while ((hz = get_next_line(fd, &line)) > 0)
 	{
 		ft_putstr(line);
-		ft_putstr("\n");
+	//	ft_putstr("\n");
 		free(line);
 	}
 
