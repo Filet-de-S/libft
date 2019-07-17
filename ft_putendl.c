@@ -6,7 +6,7 @@
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 17:54:48 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/04/15 17:58:35 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/07/16 18:37:57 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 void	ft_putendl(char const *s)
 {
+	size_t i;
+
+	i = 0;
 	if (s)
 	{
-		ft_putstr(s);
-		ft_putchar('\n');
+		i = ft_strlen(s);
+		write(1, s, i);
+		write(1, "\n", 1);
 	}
 }
