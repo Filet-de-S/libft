@@ -14,12 +14,11 @@
 
 int		ft_memdl(void **ap)
 {
-	if (ap)
+	if (ap && *ap)
 		while (*ap)
 		{
 			free(*ap);
 			ap++;
 		}
-	free(ap);
 	return (0);
 }
