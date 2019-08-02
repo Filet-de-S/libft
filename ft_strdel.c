@@ -14,10 +14,19 @@
 
 int		ft_strdl(char **as)
 {
+	char *t;
+	int i;
+
+	i = 0;
 	if (as)
 	{
-		free(*as);
-		*as = 0;
+		while (as[i])
+		{
+			t = as[i + 1];
+			free(as[i]);
+			as[i] = 0;
+			as[i] = t;
+		}
 	}
 	return (0);
 }

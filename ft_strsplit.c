@@ -53,7 +53,7 @@ char			**ft_strsplit(char const *s, char c)
 		if (s[i] != c)
 		{
 			k = 0;
-			if (!(b[j] = ft_strnew(sl(s + i, c, 1))) && !ft_memdl((void **)b))
+			if (!(b[j] = ft_strnew(sl(s + i, c, 1))) && !ft_strdl(b))
 				return (NULL);
 			while (s[i] && s[i] != c)
 				b[j][k++] = s[i++];
