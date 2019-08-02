@@ -62,6 +62,7 @@ SRC = get_next_line.c \
 	  ft_strdel.c \
 	  ft_strclr.c \
 	  ft_strdl.c \
+	  ft_sfstrjoin.c \
 
 OBJ = $(SRC:.c=.o)
 

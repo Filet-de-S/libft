@@ -29,6 +29,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_sfstrjoin(char **fre, const char *ad);
 int					ft_strdl(char **as);
 int					get_next_line(const int fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
