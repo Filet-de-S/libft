@@ -16,6 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char *n;
 
+	n = NULL;
 	if (size + 1 == 0)
 		return (NULL);
 	if (!(n = (char *)malloc(sizeof(char) * (size + 1))))

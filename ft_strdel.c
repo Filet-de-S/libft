@@ -25,7 +25,7 @@ int		ft_strdl(char **as)
 			t = as[i + 1];
 			free(as[i]);
 			as[i] = 0;
-			as[i] = t;
+			as[++i] = t;
 		}
 	}
 	return (0);
