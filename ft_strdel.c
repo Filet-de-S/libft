@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdl.c                                         :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,21 +12,12 @@
 
 #include "libft.h"
 
-int		ft_strdl(char **as)
+int		ft_strdel(char **as)
 {
-	char *t;
-	int i;
-
-	i = 0;
 	if (as)
 	{
-		while (as[i])
-		{
-			t = as[i + 1];
-			free(as[i]);
-			as[i] = 0;
-			as[++i] = t;
-		}
+		free(*as);
+		*as = 0;
 	}
 	return (0);
 }

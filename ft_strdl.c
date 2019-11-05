@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strdl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 17:56:59 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/04/22 16:02:33 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/11/05 16:22:10 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strdel(char **as)
+int		ft_strdl(char **as)
 {
+	char *t;
+	int i;
+
+	i = 0;
 	if (as)
 	{
-		free(*as);
-		*as = 0;
+		while (as[i])
+		{
+			t = as[i + 1];
+			free(as[i]);
+			as[i] = 0;
+			as[++i] = t;
+		}
+		free(as);
+		as = NULL;
 	}
 	return (0);
 }
