@@ -64,18 +64,26 @@ SRC = get_next_line.c \
 	  ft_strdl.c \
 	  ft_sfstrjoin.c \
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 all: $(NAME)
+$(NAME): objdir $(OBJ)
+	@ar rc $@ $(OBJ)
+	@ranlib $@
 
-$(NAME):
-	@gcc -Wall -Wextra -Werror -g -I includes/ -c $(SRC)
-	@ar rc $(NAME) $(OBJ)
+obj/%.o: %.c
+	@gcc -Wall -Wextra -Werror -g -I includes/ -c $< -o $@
+	@echo "$< compiled!"
+
+objdir:
+	@[ -d obj ] || mkdir obj
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf obj
+	@echo "Obj Cleaned!"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "Full Cleaned!"
 
 re: fclean all
