@@ -70,10 +70,11 @@ all: $(NAME)
 $(NAME): objdir $(OBJ)
 	@ar rc $@ $(OBJ)
 	@ranlib $@
+	@echo "Libft is ready!"
 
 obj/%.o: %.c
 	@gcc -Wall -Wextra -Werror -g -I includes/ -c $< -o $@
-	@echo "$< compiled!"
+	@echo "new obj created: $@"
 
 objdir:
 	@[ -d obj ] || mkdir obj
