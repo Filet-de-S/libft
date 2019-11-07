@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 14:23:57 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/04/18 23:09:28 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/11/07 21:54:15 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (!s || !(b = ft_strnew(len)))
 		return (NULL);
 	i = 0;
-	while (*s && i < len)
+	while (s[start] && i < len)
 		b[i++] = s[start++];
 	return (b);
 }
