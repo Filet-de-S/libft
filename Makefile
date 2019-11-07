@@ -1,7 +1,6 @@
 NAME = libft.a
 
-SRC = get_next_line.c \
-	  ft_memset.c \
+SRC = ft_memset.c \
 	  ft_putendl.c \
 	  ft_lstdelone.c \
 	  ft_lstnew.c \
@@ -63,6 +62,8 @@ SRC = get_next_line.c \
 	  ft_strclr.c \
 	  ft_strdl.c \
 	  ft_sfstrjoin.c \
+	  get_next_line.c \
+	  get_next_char.c \
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 

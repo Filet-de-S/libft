@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 19:57:03 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/05/14 15:32:04 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/11/07 20:07:32 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
+int					get_next_char(const int fd, char **line);
 char				*ft_sfstrjoin(char **fre, const char *ad);
 int					ft_strdl(char **as);
 int					get_next_line(const int fd, char **line);
