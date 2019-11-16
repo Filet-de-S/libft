@@ -1,4 +1,5 @@
 *.o
-*.dSYM
+*.dSYM/
 *.out
 obj
+libft.a
