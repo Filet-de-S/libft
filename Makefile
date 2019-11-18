@@ -75,17 +75,17 @@ $(NAME): objdir $(OBJ)
 
 obj/%.o: %.c
 	@gcc -Wall -Wextra -Werror -g -I includes/ -c $< -o $@
-	@echo "new obj created: $@"
+	@echo "libft–> new obj created: $@"
 
 objdir:
 	@[ -d obj ] || mkdir obj
 
 clean:
 	@rm -rf obj
-	@echo "Obj Cleaned!"
+	@echo "libft–> objs cleaned!"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Full Cleaned!"
+	@echo "libft–> full cleaned!"
 
 re: fclean all
