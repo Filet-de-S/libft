@@ -19,13 +19,17 @@ static int		sl(const char *s, char c, int a)
 
 	r = 0;
 	i = -1;
-	if (a == 0)
-	{
-		while (s[++i])
-			while (s[i] != c && s[i++])
-				if (s[i] == c || s[i] == '\0')
-					r++;
-	}
+    if (a == 0)
+    {
+        while (s[++i])
+        {
+            while (s[i] != c && s[i++])
+                if (s[i] == c || s[i] == '\0')
+                    r++;
+            if (s[i - 1] == '\0')
+                break;
+        }
+    }
 	else
 		while (s[++i])
 			while (s[i] != c && s[i++])
