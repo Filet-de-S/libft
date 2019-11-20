@@ -1,4 +1,4 @@
-NAME = libft.a
+NAME = ./libft.a
 
 SRC = ft_memset.c \
 	  ft_putendl.c \
@@ -64,21 +64,23 @@ SRC = ft_memset.c \
 	  ft_sfstrjoin.c \
 	  get_next_line.c \
 	  get_next_char.c \
+	  is_whitespaces.c \
+	  ft_strsplitwhites.c
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
 all: $(NAME)
-$(NAME): objdir $(OBJ)
+
+$(NAME): obj/ $(OBJ)
 	@ar rc $@ $(OBJ)
 	@ranlib $@
-	@echo "Libft is ready!"
 
 obj/%.o: %.c
 	@gcc -Wall -Wextra -Werror -g -I includes/ -c $< -o $@
 	@echo "libft–> new obj created: $@"
 
-objdir:
-	@[ -d obj ] || mkdir obj
+obj/:
+	@mkdir obj
 
 clean:
 	@rm -rf obj

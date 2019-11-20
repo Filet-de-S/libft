@@ -28,6 +28,8 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+int					is_white(char c);
+char				**ft_strsplitwhites(char const *s);
 int					get_next_char(const int fd, char **line);
 char				*ft_sfstrjoin(char **fre, const char *ad);
 int					ft_strdl(char **as);

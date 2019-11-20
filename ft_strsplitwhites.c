@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		sl(const char *s, char c, int a)
+static int		sl(const char *s, int a)
 {
 	size_t i;
 	size_t r;
@@ -23,8 +23,8 @@ static int		sl(const char *s, char c, int a)
     {
         while (s[++i])
         {
-            while (s[i] != c && s[i++])
-                if (s[i] == c || s[i] == '\0')
+            while (!is_white(s[i]) && s[i++])
+                if (is_white(s[i]) || s[i] == '\0')
                     r++;
             if ((i - 1 == ((size_t) - 1)) || s[i - 1] == '\0')
                 break;
@@ -32,34 +32,34 @@ static int		sl(const char *s, char c, int a)
     }
 	else
 		while (s[++i])
-			while (s[i] != c && s[i++])
+			while (!is_white(s[i]) && s[i++])
 			{
 				r++;
-				if (s[i] == c || s[i] == '\0')
+				if (is_white(s[i]) || s[i] == '\0')
 					return (r);
 			}
 	return (r);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char			**ft_strsplitwhites(char const *s)
 {
 	char	**b;
 	size_t	i;
 	size_t	j;
 	size_t	k;
 
-	if (!s || !(b = (char**)malloc(sizeof(char*) * (sl(s, c, 0) + 1))))
+	if (!s || !(b = (char**)malloc(sizeof(char*) * (sl(s, 0) + 1))))
 		return (NULL);
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		if (s[i] != c)
+		if (!is_white(s[i]))
 		{
 			k = 0;
-			if (!(b[j] = ft_strnew(sl(s + i, c, 1))) && !ft_strdl(b))
+			if (!(b[j] = ft_strnew(sl(s + i, 1))) && !ft_strdl(b))
 				return (NULL);
-			while (s[i] && s[i] != c)
+			while (s[i] && !is_white(s[i]))
 				b[j][k++] = s[i++];
 			j++;
 		}
