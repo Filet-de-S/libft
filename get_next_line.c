@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/02 10:48:14 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/11/06 20:36:02 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/11/22 22:58:31 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,16 @@ static int		delme(t_list **left, t_list **tmp, char ***line)
 	free((*tmp)->content);
 	(*tmp)->content = NULL;
 	tmp1 = *left;
-	while (tmp1)
+	while (tmp1->content)
 	{
 		if (tmp1->content)
 			break ;
 		tmp1 = tmp1->next;
 	}
-	if (!tmp1)
+	if (!tmp1->content)
 	{
-		free(tmp1);
-		tmp1 = NULL;
+		free(&left);
+		left = NULL;
 	}
 	return (1);
 }
