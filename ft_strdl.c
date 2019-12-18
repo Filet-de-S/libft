@@ -6,7 +6,7 @@
 /*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/13 17:56:59 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/11/05 16:22:10 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/12/18 16:53:49 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_strdl(char **as)
 {
-	char *t;
-	int i;
+	char	*t;
+	int		i;
 
 	i = 0;
 	if (as)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplitwhites.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkatelyn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kkatelyn <kkatelyn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 19:37:02 by kkatelyn          #+#    #+#             */
-/*   Updated: 2019/11/20 20:51:28 by kkatelyn         ###   ########.fr       */
+/*   Updated: 2019/12/18 16:54:10 by kkatelyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ static int		sl(const char *s, int a)
 
 	r = 0;
 	i = -1;
-    if (a == 0)
-    {
-        while (s[++i])
-        {
-            while (!is_white(s[i]) && s[i++])
-                if (is_white(s[i]) || s[i] == '\0')
-                    r++;
-            if ((i - 1 == ((size_t) - 1)) || s[i - 1] == '\0')
-                break;
-        }
-    }
+	if (a == 0)
+	{
+		while (s[++i])
+		{
+			while (!is_white(s[i]) && s[i++])
+				if (is_white(s[i]) || s[i] == '\0')
+					r++;
+			if ((i - 1 == ((size_t)-1)) || s[i - 1] == '\0')
+				break ;
+		}
+	}
 	else
 		while (s[++i])
 			while (!is_white(s[i]) && s[i++])
